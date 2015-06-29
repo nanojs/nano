@@ -646,7 +646,7 @@ nano.def = {
 		if (nano.type(obj) === 'array') {
 			for (var i = 0; i < obj.length; i++) this.node.appendChild((obj.nano)? obj.node : obj);
 			return this;
-		} else if (typeof obj.tag === 'string') {
+		} else if (typeof obj !== 'undefined' && typeof obj.tag === 'string') {
 			obj.parent = this;
 			return new nano(obj);
 		}
